@@ -60,7 +60,7 @@
         })
       }
       // 扫描雷达
-      drawArc({ r: centerPoint, color: 'transparent', start: mystart, end: mystart + 5 / 4, dir: true})
+      drawArc({ r: centerPoint, color: 'transparent', start: startArc, end: startArc + 5 / 4, dir: true})
       ctx.lineTo(0, 0)
       // 填充雷达颜色
       var fillColor = ctx.createLinearGradient(0, 0, 0, canvas.height)
@@ -70,7 +70,7 @@
 
       ctx.fillStyle = fillColor
       
-      ctx.moveTo(centerPoint * 11 / 15 * Math.cos(-Math.PI * (3 / 4 + mystart)), centerPoint * 11 / 15 * Math.cos(-Math.PI * (3 / 4 + mystart)))
+      ctx.moveTo(centerPoint * 11 / 15 * Math.cos(-Math.PI * (3 / 4 + startArc)), centerPoint * 11 / 15 * Math.cos(-Math.PI * (3 / 4 + startArc)))
       ctx.lineTo(0, 0)
       ctx.fill()
     }
