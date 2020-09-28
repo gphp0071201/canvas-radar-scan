@@ -16,7 +16,7 @@
     let ctx = canvas.getContext('2d')
     const centerPoint = canvas.width / 2
     ctx.translate(centerPoint, centerPoint)
-    var mystart = 0
+    var startArc = 0 // 雷达扫描经过的弧度
     var step = 1 / 720 // 重新渲染 雷达扫描过的弧度
     const arcColor = 'gray' // 圆弧颜色 支持支持css能识别的各种形式
     const arcLineWidth = centerPoint / 150  // 圆弧描边线宽度
@@ -32,9 +32,9 @@
     run()
     function run () {
       draw()
-      mystart += step
-      if (mystart >= 2) {
-        mystart = 0
+      startArc += step
+      if (startArc >= 2) {
+        startArc = 0
       }
       requestAnimationFrame(run)
     }
